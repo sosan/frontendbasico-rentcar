@@ -1,0 +1,1241 @@
+:root {
+  --d: 700ms;
+  --e: cubic-bezier(0.19, 1, 0.22, 1);
+
+  --SEPARACION_COLORES_TOOLTIP: white;
+
+  /* Colores tooltip */
+  --background-color-tooltip: rgba(59, 72, 80, 0.9);
+  --border-color-tooltip: rgba(55, 64, 70, 0.9);
+  --gradiente-tooltip: rgba(59, 72, 80, 0.44);
+
+  --SEPARACION_COLORES_BACKGROUND: white;
+
+  --color-background-input: #e9ecef;
+  --color-texto-input: #495057;
+  --color-border-input: #ced4da;
+  --color-border-input-focus: #86b7fe;
+  --color-background-input-focus: #fff;
+  --color-box-shadow-input-focus: rgba(13, 110, 253, 0.25);
+  --color-texto-input-focus: #212529;
+
+  --SEPARACION_COLORES_CABECERA: white;
+  /* cabecera */
+  --background-cabecera-container: #eaf2fd;
+  --background-cabecera: #fafafa;
+
+}
+
+* {
+  text-decoration: none;
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+}
+
+body{
+  width:100%;
+  overflow-x:hidden;
+  background-color: #fafafa;
+  }
+
+
+#container {
+  width: 100%;
+  margin: 0px auto;
+  border: 1px solid rgba(255, 255, 256, 0.8);
+  /* min-height: 600px; */
+}
+
+/* ------------- Inicio Contenido ------------- */
+#content {
+  display: grid;
+  grid-template-columns: .5fr 1fr;
+  align-items: start;
+  justify-items: space-between;
+  grid-column-gap: 7px;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+  /* background-image: url("../img/Img-Banner/FaroSoller.webp"); */
+  background-color: #fafafa;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+/* --------- Inicio Formulario busqueda ----------*/
+/**** Inicio CSS formulario Buscar Ofertas ****/
+.formContainer {
+  display: grid;
+  grid-template-columns: 0.9fr;
+  grid-template-rows: 1fr auto;
+
+  grid-template-areas:
+      "titulo"
+      "data";
+  justify-items: flex-start;
+  align-items: flex-start;
+  width: 86%;
+  padding: 1rem;
+  margin-top: 17px;
+  margin-left: 70px;
+  border: 1px solid #ddd;
+  background-color: #eaf2fd;
+}
+
+.formTit{
+  grid-area: titulo;
+  width: 100%;
+}
+
+.formTit h2 {
+  display: block;
+  font-size: 1.5em;
+  /* margin-block-start: 0.83em; */
+  margin-block-end: 0.83em;
+  /* margin-inline-start: 2em; */
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+.grid-container {
+  grid-area: data;
+  display: grid;
+  grid-template-columns: 25% 115px 9% 7% 13% 46px 10%;
+  grid-template-rows: repeat(4, 38px) auto auto;
+  width: 100%;
+  /* margin-left: 20px; */
+  /* background-color: #fff; */
+  /* gap: 0px 0px; */
+  grid-template-areas:
+    "recogidaDateTit recogidaDateData recogidaDateIcon . recogidaClockTit recogidaClockData recogidaClockData"
+    ". . . . . . ."
+    "devolucionDateTit devolucionDateData  devolucionDateIcon . devolucionClockTit devolucionClockData devolucionClockData"
+    ". . . . . . ."
+    ". driverNovel driverNovel driverNovel driverNovel driverNovel ."
+    ". . . . . . ."
+    ". driverAge driverAge driverAge driverAge . ."
+    ". . . . . . ."
+    ". verPrecio verPrecio verPrecio verPrecio . .";
+  /* place-items: center; */
+  place-content: center;
+
+
+}
+
+.input-color[readonly]
+{
+  opacity: 1;
+  
+  display: block;
+  width: 100%;
+  /* padding: .375rem .75rem; */
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-texto-input);
+  /* background-color: var(--color-background-input); */
+  background-clip: padding-box;
+  border: 1px solid var(--color-border-input);
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+}
+
+.input-color:focus {
+  
+  color: var(--color-texto-input-focus);
+  background-color: var(--color-background-input-focus);
+  border-color: var(--color-border-input-focus);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem var(--color-box-shadow-input-focus);
+}
+
+/* -------  Recogida ---------- */
+.recogidaDateTit { 
+  grid-area: recogidaDateTit; 
+}
+
+.recogidaDateData { 
+  grid-area: recogidaDateData; 
+}
+
+.recogidaDateIcon { 
+  grid-area: recogidaDateIcon; 
+}
+
+/* ----------------------- */
+
+.recogidaClockTit { 
+  grid-area: recogidaClockTit; 
+}
+
+.recogidaClockData { 
+  grid-area: recogidaClockData;
+  z-index: 1;
+}
+
+.recogidaClockIcon { 
+  grid-area: recogidaClockIcon; 
+}
+/* -------  Devolución ---------- */
+.devolucionDateTit { 
+    grid-area: devolucionDateTit; 
+}
+
+.devolucionDateData { 
+  grid-area: devolucionDateData; 
+}
+
+.devolucionDateIcon { 
+  grid-area: devolucionDateIcon; 
+}
+
+/* ----------------------- */
+
+.devolucionClockTit { 
+  grid-area: devolucionClockTit; 
+}
+
+.devolucionClockData { 
+  grid-area: devolucionClockData;
+  z-index: 1;
+}
+
+.devolucionClockIcon { 
+  grid-area: devolucionClockIcon; 
+}
+
+/* -------  Conductor Novel ---------- */
+.driverNovel { 
+  grid-area: driverNovel; 
+}
+
+/* -------  Edad del Conductor ------- */
+.driverAge { 
+  grid-area: driverAge; 
+}
+
+/* ------  Botón buscar ofertas ------ */
+.verPrecio { 
+  grid-area: verPrecio; 
+}
+
+/* ************************** */
+.recogidaClockTit,
+.devolucionDateTit,
+.devolucionClockTit,
+.recogidaDateTit p {
+  font-size: 14px;
+  /* font-weight: bolder; */
+  margin-top: 4px;
+}
+
+/* ************************** */
+  
+.labelDate-form-devolucion {
+  margin-left: -16px;
+  margin-right: 3px;
+  font-size: 20px;
+  font-weight: bolder;
+}
+  
+.form-control-date {
+  cursor: pointer;
+}
+  
+.form-control-clock {
+  cursor: pointer;
+  margin-top: -9px;
+}
+  
+.img-calendar {
+  width: 25px;
+  cursor: pointer;
+  margin-left: 3px;
+  /* background-color: #e9ecef; */
+  /* box-shadow: 0px 0px 2px #1e1c1c; */
+}
+  
+.img-clock {
+  width: 24px;
+  margin-top: -9px;
+  /* margin-right: -11px; */
+  margin-left: 7px;
+  background-color: #e9ecef;
+  box-shadow: 0px 0px 2px #1e1c1c;
+  cursor: pointer;
+}
+  
+.form-contol-clock {
+  width: 68px !important;
+  box-shadow: 0px 0px 2px #1e1c1c;
+  cursor: pointer;
+}
+  
+.input-group2 {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  /* align-items: stretch; */
+  align-items: center;
+}
+
+.form-chequeo {
+  font-size: 17px;
+}
+
+.gap-10
+{
+  gap: 10px;
+
+}
+
+.colapsable-content
+{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+
+}
+
+.columna-centrado
+{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.centrado
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.driverAge label {
+  width: 73%;
+  margin-left: 15px;
+}
+
+.edad_conductor
+{
+  width: 30px;
+  height: 26px;
+  /* margin-top: -7px; */
+  border: 1px solid #ddd;
+  background: #fff;
+  padding-left: 4px;
+
+}
+
+.texto_edadconductor
+{
+  margin-bottom: 0px;
+}
+
+
+
+.elemento__inputradio
+{
+    display: none;
+}
+
+
+.elemento__circulo
+{
+  width: 25px;
+  height: 25px;
+  
+  border: 1px solid #ddd;
+  background: #fff;
+  position: relative;
+  left: 0.8%;
+  
+  margin-bottom: 0;
+}
+
+
+/* palito derecho */
+.elemento__circulo:after
+{
+    content: "";
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    
+    width: 0px;
+    height: 3px;
+    
+    background: rgb(6, 0, 128);
+
+    transform: translate(4px, 11px) rotate(-45deg);
+    transform-origin: left;
+    transition: all 150ms;
+    transition-delay: 0ms;
+
+}
+
+/* palito izquierdo */
+.elemento__circulo:before
+{
+    content: "";
+    position: absolute;
+    left: 20%;
+    top: 20%;
+
+    width: 0px;
+    height: 3px;
+
+    background: rgb(6, 0, 128);
+
+    transform: translate(1px, 6px) rotate(45deg);
+    transform-origin: left;
+    transition: all 150ms;
+    transition-delay: 150ms;
+}
+
+.elemento__titulo 
+{
+  display: block;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 0;
+
+}
+
+
+/* pulsado el inpuradio */
+
+/* izquierdo */
+.elemento__inputradio:checked ~ .elemento__circulo:before
+{
+    width: 7px;
+    transition-delay: 0ms;
+}
+
+/* derecho */
+.elemento__inputradio:checked ~ .elemento__circulo:after
+{
+    width: 15px;
+    transition-delay: 160ms;
+}
+
+
+.elemento__inputradio:checked ~ .elemento__titulo
+{
+    transition: all 650ms;
+}
+
+
+.invisible
+{
+  visibility: hidden;
+
+}
+
+.visible
+{
+  visibility: visible;
+
+}
+
+.btnBuscar {
+  margin-top: -17px;
+}
+/**** Fin   CSS formulario Buscar Ofertas ****/
+
+/* --------- Fin Formulario Busqueda -------------*/
+
+/* --------- Inicio Tarjetas ------------------- */
+.page-content {
+  display: grid;
+  grid-gap: 1rem;
+  padding: 1rem;
+  max-width: 1024px;
+  margin: 0 auto;
+  font-family: var(--font-sans);
+}
+@media (min-width: 600px) {
+  .page-content {
+    grid-template-columns: repeat(2, 3fr);
+  }
+}
+@media (min-width: 800px) {
+  .page-content {
+    grid-template-columns: repeat(3, 3fr);
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  /* align-items: flex-end; */
+  align-items: center;
+  overflow: hidden;
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  color: whitesmoke;
+  background-color: whitesmoke;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+@media (min-width: 600px) {
+  .card {
+    height: 350px;
+  }
+}
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  background-size: contain;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  transition: transform calc(var(--d) * 1.5) var(--e);
+  pointer-events: none;
+}
+.card:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  pointer-events: none;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.32) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.54) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.79) 100%);
+  transform: translateY(-50%);
+  transition: transform calc(var(--d) * 2) var(--e);
+  
+}
+
+
+
+
+.form-line
+{
+  display: flex;
+  justify-content: center;
+}
+
+.card:hover > .content > .title
+{
+  color: white;
+}
+
+.imagen-vehiculo
+{
+  min-width: 125%;
+    /* max-width: fit-content; */
+    margin-left: -22px;
+}
+
+
+
+@supports not (background-image: url("/img/Img-Vehiculos/peugeot108Blue_Card.avif")) {
+
+  .peugeot108Blue:before {
+    background-image: url(/img/Img-Vehiculos/peugeot108Blue_Card.webp);
+  }
+}
+
+@supports (background-image: url("/img/Img-Vehiculos/peugeot108Blue_Card.avif")) {
+
+  .peugeot108Blue:before {
+    background-image: url(/img/Img-Vehiculos/peugeot108Blue_Card.avif);
+  }
+
+}
+
+
+@supports not (background-image: url("/img/Img-Vehiculos/toyotaAygoRed_Card.avif")) {
+
+  .toyotaAygoRed:before {
+    background-image: url(/img/Img-Vehiculos/toyotaAygoRed_Card.webp);
+  }
+}
+
+@supports (background-image: url("/img/Img-Vehiculos/toyotaAygoRed_Card.avif")) {
+  .toyotaAygoRed:before {
+  background-image: url(/img/Img-Vehiculos/toyotaAygoRed_Card.avif);
+  }
+}
+
+/* ---- */
+
+@supports not (background-image: url("/img/Img-Vehiculos/CitroenC1_open_Card.avif")) {
+
+  .CitroenC1_open:before {
+    background-image: url(/img/Img-Vehiculos/CitroenC1_open_Card.webp);
+  }
+}
+
+@supports (background-image: url("/img/Img-Vehiculos/CitroenC1_open_Card.avif")) {
+  .CitroenC1_open:before {
+  background-image: url(/img/Img-Vehiculos/CitroenC1_open_Card.avif);
+}
+
+}
+
+/* ---- */
+@supports not (background-image: url("/img/Img-Vehiculos/citroenC1AutomaticPlata_Card.avif")) {
+
+  .citroenC1AutomaticPlata:before {
+    background-image: url(/img/Img-Vehiculos/citroenC1AutomaticPlata_Card.webp);
+  }
+}
+
+@supports (background-image: url("/img/Img-Vehiculos/citroenC1AutomaticPlata_Card.avif")) {
+
+  .citroenC1AutomaticPlata:before {
+    background-image: url(/img/Img-Vehiculos/citroenC1AutomaticPlata_Card.avif);
+  }
+}
+
+/*  */
+@supports not (background-image: url("/img/Img-Vehiculos/citroenC1White_Card.avif")) {
+
+  .citroenC1White:before {
+    background-image: url(/img/Img-Vehiculos/citroenC1White_Card.webp);
+  }
+}
+
+@supports (background-image: url("/img/Img-Vehiculos/citroenC1White_Card.avif")) {
+
+  .citroenC1White:before {
+    background-image: url(/img/Img-Vehiculos/citroenC1White_Card.avif);
+  }
+
+}
+
+
+/*  */
+@supports not (background-image: url("/img/Img-Vehiculos/toyotaAygoOpenWhite_Card.avif")) {
+
+  .toyotaAygoOpenWhite:before {
+    background-image: url(/img/Img-Vehiculos/toyotaAygoOpenWhite_Card.webp);
+  }
+}
+
+@supports (background-image: url("/img/Img-Vehiculos/toyotaAygoOpenWhite_Card.avif")) {
+  .toyotaAygoOpenWhite:before {
+    background-image: url(/img/Img-Vehiculos/toyotaAygoOpenWhite_Card.avif);
+}
+
+}
+
+/*  */
+@supports not (background-image: url("/img/Img-Vehiculos/citroenC3WhiteRed_Card.avif")) {
+
+  .citroenC3WhiteRed:before {
+    background-image: url(/img/Img-Vehiculos/citroenC3WhiteRed_Card.webp);
+  }
+}
+
+@supports (background-image: url("/img/Img-Vehiculos/citroenC3WhiteRed_Card.avif")) {
+    .citroenC3WhiteRed:before {
+    background-image: url(/img/Img-Vehiculos/citroenC3WhiteRed_Card.avif);
+    }
+}
+
+/*  */
+@supports not (background-image: url("/img/Img-Vehiculos/peugeot807Grey_Card.avif")) {
+
+  .peugeot807Grey:before {
+    background-image: url(/img/Img-Vehiculos/peugeot807Grey_Card.webp);
+  }
+}
+
+@supports (background-image: url("/img/Img-Vehiculos/peugeot807Grey_Card.avif")) {
+  .peugeot807Grey:before {
+  background-image: url(/img/Img-Vehiculos/peugeot807Grey_Card.avif);
+}
+}
+
+/*  */
+@supports not (background-image: url("/img/Img-Vehiculos/PiaggioLiberty_125cc_Card.avif")) {
+
+  .PiaggioLiberty_125cc:before {
+    background-image: url(/img/Img-Vehiculos/PiaggioLiberty_125cc_Card.webp);
+  }
+}
+
+@supports (background-image: url("/img/Img-Vehiculos/PiaggioLiberty_125cc_Card.avif")) {
+
+  .PiaggioLiberty_125cc:before {
+    background-image: url(/img/Img-Vehiculos/PiaggioLiberty_125cc_Card.avif);
+  }
+}
+
+/*  */
+@supports not (background-image: url("/img/Img-Vehiculos/Suzuki-Burgman_125cc_Card.avif")) {
+
+  .Suzuki-Burgman_125cc:before {
+    background-image: url(/img/Img-Vehiculos/Suzuki-Burgman_125cc_Card.webp);
+  }
+}
+
+@supports (background-image: url("/img/Img-Vehiculos/Suzuki-Burgman_125cc_Card.avif")) {
+
+    .Suzuki-Burgman_125cc:before {
+    background-image: url(/img/Img-Vehiculos/Suzuki-Burgman_125cc_Card.avif);
+    }
+}
+
+
+.title-peugeot108Blue {
+  
+}
+.title-toyotaAygoRed {
+ 
+}
+.title-CitroenC1_open {
+ 
+}
+.title-citroenC1AutomaticPlata {
+  transform: translateY(-40px);
+}
+
+.title-citroenC1White {
+ 
+}
+
+.title-toyotaAygoOpenWhite {
+ 
+}
+.title-citroenC3WhiteRed {
+ 
+}
+.title-peugeot807Grey {
+ 
+}
+.title-PiaggioLiberty_125cc {
+  transform: translateY(-40px);
+}
+.title-Suzuki-Burgman_125cc {
+  transform: translateY(-35px);
+}
+
+.logo-PiaggioLiberty_125cc {
+  transform: translateY(-30px);
+}
+
+.logo-citroenC1AutomaticPlata {
+  transform: translateY(-25px);
+}
+
+.logo-Suzuki-Burgman_125cc
+{
+  transform: translateY(-25px);
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+  transition: transform var(--d) var(--e);
+  z-index: 1;
+}
+.content > * + * {
+  margin-top: 1rem;
+}
+
+.coche-card
+{
+  width: 100%;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 1.2;
+  color: black;
+}
+
+
+.copy {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+/* ----------   Inicio Servicios ------------- */
+.page-content .card .content h2{
+    
+}
+
+
+.imgLogo{
+  width: 25px;
+}
+
+/* --   Barra de Iconos de Servicios -- */
+.car-info-services {
+    grid-area: servicios;
+    display: grid;
+    grid-template-columns: repeat(4, 39px);
+    grid-template-rows: 31px;
+    grid-template-areas: 
+    "a a a a"
+    "l l . o"
+    ;
+    justify-items: flex-start;
+}
+  
+.icon-24 {
+    width: 16px;
+    margin-top: 7px;
+}
+  
+.servicios-asientos{
+    width: 82%;
+    border: 1px solid white;
+    margin-left: 2px;
+    margin-top: 4px;
+}
+  
+.icon-number{
+    display: inline;
+    font-size: 13px;
+    color: white;
+}
+  
+.servicios-puertas{
+    border: 1px solid white;
+    width: 82%;
+    margin-left: 2px;
+    margin-top: 4px;
+}
+  
+.servicios-aire{
+    border: 1px solid white;
+    width: 82%;
+    margin-left: 2px;
+    margin-top: 4px;
+}
+  
+.servicios-trasmision{
+    border: 1px solid white;
+    width: 97%;
+    margin-left: 2px;
+    margin-top: 4px;
+}
+/* - Fin Barra de Iconos de Servicios - */
+
+.moto-info-services {
+    grid-area: servicios;
+    display: grid;
+    grid-template-columns: repeat(2, 39px);
+    grid-template-rows: 31px;
+    grid-template-areas: 
+    "a a"
+    "l l"
+    ;
+    justify-items: flex-start;
+}
+
+.servicios-topcase{
+    width: 82%;
+    border: 1px solid white;
+    margin-left: 2px;
+    margin-top: 4px;
+}
+
+/* ----------     Fin Servicios  ------------- */
+
+
+.btn {
+  cursor: pointer;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.65rem;
+  font-weight: bold;
+  letter-spacing: 0.025rem;
+  text-transform: uppercase;
+  color: white;
+  background-color: rgb(46, 9, 186);
+  border: none;
+  border-radius: 3px;
+}
+.btn:hover {
+  background-color: rgb(65, 24, 216);;
+}
+.btn:focus {
+  outline: 1px dashed yellow;
+  outline-offset: 3px;
+}
+
+@media (hover: hover) and (min-width: 600px) {
+  .card:after {
+    transform: translateY(0);
+  }
+
+  .content {
+    transform: translateY(calc(100% - 4.5rem));
+  }
+  .content > *:not(.title) {
+    opacity: 1;
+    /* transform: translateY(1rem); */
+    transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+  }
+
+  .card:hover,
+  .card:focus-within {
+    align-items: center;
+  }
+  .card:hover:before,
+  .card:focus-within:before {
+    transform: translateY(-4%);
+  }
+  .card:hover:after,
+  .card:focus-within:after {
+    transform: translateY(-50%);
+  }
+  .card:hover .content,
+  .card:focus-within .content {
+    transform: translateY(0);
+  }
+  .card:hover .content > *:not(.title),
+  .card:focus-within .content > *:not(.title) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: calc(var(--d) / 8);
+  }
+
+  .card:focus-within:before, .card:focus-within:after,
+  .card:focus-within .content,
+  .card:focus-within .content > *:not(.title) {
+    transition-duration: 0s;
+  }
+}
+
+#aside {
+  margin-right: 30px;
+  padding: 15px;
+}
+
+#footer {
+  display: grid;
+  grid-template-columns: 1fr 25%;
+  align-items: center;
+  justify-content: start;
+  height: 120px;
+  align-items: center;
+  border-top: 1px solid rgba(225, 225, 226, 0.8);
+}
+
+#footer .info {
+  margin-left: 20px;
+  color: #444;
+}
+
+.elemento__inputradio
+{
+    display: none;
+}
+
+/* palito derecho */
+.elemento__circulo:after
+{
+    content: "";
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    
+    width: 0px;
+    height: 3px;
+    
+    background: rgb(6, 0, 128);
+
+    transform: translate(4px, 11px) rotate(-45deg);
+    transform-origin: left;
+    transition: all 150ms;
+    transition-delay: 0ms;
+
+}
+
+/* palito izquierdo */
+.elemento__circulo:before
+{
+    content: "";
+    position: absolute;
+    left: 20%;
+    top: 20%;
+
+    width: 0px;
+    height: 3px;
+
+    background: rgb(6, 0, 128);
+
+    transform: translate(1px, 6px) rotate(45deg);
+    transform-origin: left;
+    transition: all 150ms;
+    transition-delay: 150ms;
+}
+
+.elemento__titulo 
+{
+  display: block;
+
+  border-radius: 5px;
+  
+  cursor: pointer;
+}
+
+
+/* pulsado el inpuradio */
+
+/* izquierdo */
+.elemento__inputradio:checked ~ .elemento__circulo:before
+{
+    width: 7px;
+    transition-delay: 0ms;
+}
+
+/* derecho */
+.elemento__inputradio:checked ~ .elemento__circulo:after
+{
+    width: 15px;
+    transition-delay: 160ms;
+}
+
+
+.elemento__inputradio:checked ~ .elemento__titulo
+{
+    transition: all 650ms;
+}
+
+.gap-10
+{
+  gap: 10px;
+
+}
+
+.columna-gap-10
+{
+  column-gap: 10px;
+}
+
+.margen-abajo
+{
+  margin-bottom: 12px;
+}
+
+.columna-centrado
+{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.centrado
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+
+
+/* TOOLTIP */
+
+
+[data-tooltip]
+{
+  position: relative;
+  z-index: 10;
+}
+
+
+[data-tooltip]:before,
+[data-tooltip]:after 
+{
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  left: 50%;
+  bottom: calc(100% + 5px);
+  pointer-events: none;
+  transition: 0.2s;
+  will-change: transform;
+}
+
+
+
+
+[data-tooltip]:before {
+  content: attr(data-tooltip);
+  padding: 10px 18px;
+  min-width: 50px;
+  max-width: 300px;
+  width: max-content;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: var(--background-color-tooltip);
+  background-image: linear-gradient(30deg,
+    var(--gradiente-tooltip),
+    var(--gradiente-tooltip),
+    var(--gradiente-tooltip)
+    );
+  box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  text-align: center;
+  white-space: pre-wrap;
+  transform: translate(-50%, -5px) scale(0.5);
+}
+
+
+
+[data-tooltip]:after {
+  content: '';
+  border-style: solid;
+  border-width: 5px 5px 0px 5px;
+  border-color: var(--border-color-tooltip) transparent transparent transparent;
+  transition-duration: 0s; 
+  transform-origin: top;  
+  transform: translateX(-50%) scaleY(0);
+}
+
+
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+[data-tooltip]:hover:before {
+  transition-delay: 0.2s;
+  transform: translate(-50%, -5px) scale(1);
+}
+
+
+[data-tooltip]:hover:after {
+  transition-delay: 0.2s;
+  transition-duration: 0.2s;
+  transform: translateX(-50%) scaleY(1);
+}
+
+
+[data-tooltip-location="left"]:before,
+[data-tooltip-location="left"]:after {
+  left: auto;
+  right: calc(100% + 5px);
+  bottom: 50%;
+}
+
+[data-tooltip-location="left"]:before
+{
+  transform: translate(-5px, 50%) scale(0.5);
+}
+[data-tooltip-location="left"]:hover:before
+{
+  transform: translate(-5px, 50%) scale(1);
+}
+
+/* Flechita */
+[data-tooltip-location="left"]:after
+{
+  border-width: 5px 0px 5px 5px;
+  border-color: transparent transparent transparent rgba(55, 64, 70, 0.9);
+  transform-origin: left;
+  transform: translateY(50%) scaleX(0);
+}
+
+[data-tooltip-location="left"]:hover:after
+{
+  transform: translateY(50%) scaleX(1);
+}
+
+
+
+/* RIGHT */
+[data-tooltip-location="right"]:before,
+[data-tooltip-location="right"]:after
+{
+  left: calc(100% + 5px);
+  bottom: 50%;
+}
+
+[data-tooltip-location="right"]:before
+{
+  transform: translate(5px, 50%) scale(0.5);
+}
+
+[data-tooltip-location="right"]:hover:before
+{
+  transform: translate(5px, 50%) scale(1);
+}
+
+[data-tooltip-location="right"]:after
+{
+  border-width: 5px 5px 5px 0px;
+  border-color: transparent var(--background-color-tooltip) transparent transparent;
+  transform-origin: right;
+  transform: translateY(50%) scaleX(0);
+}
+
+[data-tooltip-location="right"]:hover:after
+{
+  transform: translateY(50%) scaleX(1);
+}
+
+
+/* BOTTOM */
+[data-tooltip-location="bottom"]:before,
+[data-tooltip-location="bottom"]:after
+{
+  top: calc(100% + 5px);
+  bottom: auto;
+}
+
+[data-tooltip-location="bottom"]:before
+{
+  transform: translate(-50%, 5px) scale(0.5);
+}
+[data-tooltip-location="bottom"]:hover:before
+{
+  transform: translate(-50%, 5px) scale(1);
+}
+
+[data-tooltip-location="bottom"]:after
+{
+  border-width: 0px 5px 5px 5px;
+  border-color: transparent transparent rgba(55, 64, 70, 0.9) transparent;
+  transform-origin: bottom;
+}
+
+
+
+/* FIN TOOLTIP*/
+
+
+

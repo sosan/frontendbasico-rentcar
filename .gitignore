@@ -1,0 +1,36 @@
+node_modules
+.env
+.local
+*.local
+secrets/
+
+### vscode ###
+.vscode/*
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
+*.code-workspace
+
+
+# Project specific
+config/database.js
+
+# Unit test / coverage reports
+coverage/
+.nyc_output
+
+# OS auto-generated files
+.DS_Store
+._*
+
+
+# Vim
+*~
+*.swp
+*.swo
+
+# IDE files
+.idea/
+
+.vercel

@@ -1,0 +1,1442 @@
+:root {
+  --d: 700ms;
+  --e: cubic-bezier(0.19, 1, 0.22, 1);
+  --color-background-input: #e9ecef;
+  --color-texto-input: #495057;
+  --color-border-input: #ced4da;
+  --color-border-input-focus: #86b7fe;
+  --color-background-input-focus: #fff;
+  --color-box-shadow-input-focus: rgba(13, 110, 253, 0.25);
+  --color-texto-input-focus: #212529;
+
+  /* cabecera */
+  --background-cabecera-container: #eaf2fd;
+  --background-cabecera: #fafafa;
+
+  /* margen izquierda titulos */
+  --margin-izquierda-titulo: 45px;
+
+}
+
+
+body {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+
+  width: 100vw;
+  height: 100vh;
+
+}
+
+input[type="radio" i] {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 3px 3px 0px 5px;
+    padding: initial;
+    border: initial;
+}
+
+input {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+
+select {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    cursor: default;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    border-radius: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+
+
+
+.container
+{
+  /* display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas: 
+  "header"
+  "contenido_main"
+  "footer"
+  ; */
+  display: flex;
+  flex-direction: column;
+
+  /* scrollbar-gutter: force; */
+  /* scrollbar-width: 0px; */
+
+}
+
+.layout {
+    width: 100%;
+    /* height: 100%; */
+
+    grid-area: contenido_main;
+  display: grid;
+
+  /* grid-template-columns: repeat(2, auto); */
+  grid-template-columns: 20% 0.7fr;
+  grid-template-rows: repeat(5, auto);
+  grid-template-areas:
+    "sidebar contentReserva"
+    "sidebar beneficios"
+    "sidebar sillasBox"
+    "sidebar formDriver"
+    "sidebar boxBtnRevervar"
+    ;
+  /* display: flex; */
+  flex-direction: column;
+  gap: 1rem;
+  font-weight: 800;
+  font-size: 12px;
+  color: #004d40;
+  text-align: center;
+  background: #fafafa;
+  margin-left: 200px;
+}
+
+@media only screen and (max-width: 550px) {
+  .layout {
+    grid-area: contenido_main;
+    grid-template-columns: 93vw;
+
+    grid-template-areas:
+    "sidebar"
+    "contentReserva"
+    "beneficios"
+    "sillasBox"
+    "formDriver"
+    "boxBtnRevervar";
+    background: border-box;
+    /* padding: 10px;  */
+
+
+    width: 100%;
+    max-width: 100vw;
+    justify-content: center;
+
+  }
+}
+
+
+
+.banner
+{
+  width: 100vw;
+}
+
+/* ------ Inicio sidebar1 -------- */
+.sidebar1 {
+    grid-area: sidebar;
+    /* grid-column-start: 2;
+    grid-column-end:4;
+    grid-row-start: 2;
+    grid-row-end: 5; */
+}
+
+#contentAside {
+    display: block;
+}
+  
+#aside {
+    width: 265px;
+    float: left;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top: 11px solid deepskyblue;
+}
+
+.boxAside {
+    margin-bottom: 0;
+    position: relative;
+}
+
+.Cambiar a { 
+    display: grid;
+    justify-items: center;
+    margin-top: 10px;
+    font-size: 1em;
+    font-weight: 200;
+    color: blue;
+  }
+  
+.contentBoxAside {
+    padding: 20px;
+    font-size: 14px;
+    line-height: 16px;
+}
+  
+.rentacar-info {
+    display: grid;
+    grid-template-columns: 225px;
+    grid-template-rows: 150px 30px 25px 35px 32px 32px 31px 24px 31px;;
+    grid-template-areas:
+      "imagen-coche"
+      "marca"
+      "similar"
+      "servicios"
+      "combustible"
+      "location"
+      "recogida"
+      "puntos"
+      "devolucion"
+      ;
+    justify-items: flex-start;
+    align-items: center;
+    height: 100%;
+}
+  
+.car-image {
+    grid-area: imagen-coche;
+    max-width: 210px;
+    box-sizing: border-box;
+    border-collapse: collapse;
+}
+  
+.car-name {
+    grid-area: marca;
+    color: #333333;
+    font-size: 1.8em;
+    font-weight: 700;
+    text-size-adjust: none;
+    line-height: 1.3em;
+    margin-left: 33px;
+    margin-bottom: 0px;
+}
+  
+.similar {
+    grid-area: similar;
+    margin-left: 75px;
+    font-weight: 300;
+}
+  
+/* --   Barra de Iconos de Servicios -- */
+.car-info-services {
+    grid-area: servicios;
+    display: grid;
+    grid-template-columns: repeat(4, 39px);
+    grid-template-rows: 31px;
+    grid-template-areas: 
+    "a a a a";
+    /* justify-items: flex-start; */
+    margin-left: 28px;
+}
+  
+.icon-24 {
+    width: 16px;
+    margin-top: 7px;
+}
+  
+.servicios-asientos{
+    width: 82%;
+    border: 1px solid #ccc;
+    margin-left: 2px;
+    margin-top: 4px;
+}
+  
+.icon-number{
+    display: inline;
+    font-size: 13px;
+    color: #787878;
+}
+  
+.servicios-puertas{
+    border: 1px solid #ccc;
+    width: 82%;
+    margin-left: 2px;
+    margin-top: 4px;
+}
+  
+.servicios-aire{
+    border: 1px solid #ccc;
+    width: 82%;
+    margin-left: 2px;
+    margin-top: 4px;
+}
+  
+.servicios-trasmision{
+    border: 1px solid #ccc;
+    width: 97%;
+    margin-left: 2px;
+    margin-top: 4px;
+}
+/* - Fin Barra de Iconos de Servicios - */
+  
+  
+/* -- Combustible / Lugar de recogida --- */
+.car-info-services-2 {
+    margin-top: 5px;
+}
+  
+.servicios-kilometraje {
+    grid-area: combustible;
+    display: flex;
+    margin-top: 25px;
+    padding: 2px;
+}
+  
+.icon-kilometro {
+    display: inline;
+    font-size: 13px;
+    color: #787878;
+    margin-left: 8px;
+}
+  
+.icon-25 {
+    width: 20px;
+    margin-bottom: -3px;
+}
+  
+.geoLoc {
+    grid-area: location;  
+    display: flex;
+    padding: 1px;
+    margin-top: 11px;
+}
+  
+.icon-locate{
+    font-size: 13px;
+    color: #787878;
+    margin-left: 9px;
+    margin-top: 2px;
+}
+
+
+/* -- Fin Combustible / Lugar de recogida --- */
+  
+  
+/*  -- Fechas/Horas - Recogida/Devolución -- */
+.bookRecogida {
+    grid-area: recogida;
+    margin-top: 20px;
+}
+  
+.icon-dateRecogida {
+    display: inline;
+    font-size: 13px;
+    color: #787878;
+    width: 142px;
+    margin-left: 3px;
+    margin-right: 15px;
+    margin-top: -21px;
+}
+  
+.icon-clockRecogida {
+    display: inline;
+    font-size: 13px;
+    color: #787878;
+    width: 142px;
+    /* margin-left: 4px; */
+    margin-top: -21px;
+}
+  
+.puntos {
+    grid-area: puntos;
+}
+  
+.puntos img {
+    width: 10px;
+    margin-left: 5px;
+    margin-top: 14px;
+}
+  
+.bookDevolucion {
+    grid-area: devolucion;
+    margin-top: 5px;
+}
+  
+.icon-dateDevolucion {
+    display: inline;
+    font-size: 13px;
+    color: #787878;
+    width: 142px;
+    margin-left: 3px;
+    margin-right: 11px;
+    margin-top: -21px;
+}
+  
+.icon-clockDevolucion {
+    display: inline;
+    font-size: 13px;
+    color: #787878;
+    width: 142px;
+    /* margin-left: 4px; */
+    margin-top: -21px;
+}
+/*- Fin Fechas/Horas Recogida/Devolución - */
+/* -------- Fin sidebar1 --------- */
+
+/* ------ Inicio sidebar2 -------- */
+.blue {
+    /* grid-column-start: 2;
+    grid-column-end:4;
+    grid-row-start: 5;
+    background: blue; */
+}
+/* ------   Fin sidebar2  ------- */
+
+/* -------- Inicio Bloque contenido ------ */
+
+
+
+.contentReserva {
+    /* grid-column: 4 / 8;
+    grid-row: 2 / 4; */
+}
+
+.contentBlock {
+    /* grid-area: b; */
+    display: grid;
+    box-sizing: content-box;
+    grid-template-rows: 40px auto;
+    grid-template-columns: 100%;
+    grid-template-areas:
+        "titulo"
+        "info";
+    /* justify-items: flex-start;
+    align-items: flex-start; */
+    /* width: 100%; */
+    border: 1px solid #d8d8d8;
+    background-color: #fff;
+}
+
+.tituloReserva{
+    grid-area: titulo;
+    width: 100%;
+    border-bottom: 1px solid #d8d8d8;
+
+    display: flex; 
+    justify-content: flex-start;
+    align-items: center;
+
+
+    color: #333333;
+    line-height: 40px;
+    font-size: 22px;
+    padding: 0px 1px;
+    margin: 0;
+    font-weight: 700;
+
+    column-gap: 10px;
+    
+
+}
+  
+
+.infoReserva {
+    grid-area: info;
+    justify-self: left;
+    box-sizing: content-box;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(7, 31px);
+    grid-template-areas:
+        "titulo1 dato1"
+        "titulo2 dato2"
+        "titulo3 dato3"
+        "titulo4 dato4"
+        "titulo5 dato5"
+        "titulo6 dato6"
+        "titulo7 dato7";
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 50px;
+    margin-top: 32px;
+    grid-column-gap: 65px;
+    overflow-wrap: break-word;
+    font-size: 15px;
+    color: #504e4e;
+}
+  
+.titDiasReserva {
+    grid-area: titulo1;
+    /* display: inline; */
+    justify-self: start;
+}
+
+.titDiasReserva,
+.titValorReserva, 
+.titSeguro,
+.titConductor,
+.titTotReserva,
+.titValorRecogida,
+.titValorOnline {
+    color: #070101;
+}
+
+.diasReserva {
+    grid-area: dato1;
+    word-break: break-word;
+    /* display: inline; */
+    /* width: 100; */
+    justify-self: start;
+}
+  
+.titValorReserva {
+    grid-area: titulo2;
+    /* display: inline; */
+    justify-self: start;
+}
+  
+.valorReserva {
+    grid-area: dato2;
+    /* display: inline; */
+    /* width: 250px; */
+    justify-self: start;
+}
+  
+.titSeguro {
+    grid-area: titulo3;
+    /* display: inline; */
+    justify-self: start;
+}
+  
+.valorseguro {
+    grid-area: dato3;
+    /* display: inline; */
+    /* width: 100%; */
+    justify-self: start;
+}
+  
+.titConductor {
+    grid-area: titulo4;
+    /* display: inline; */
+    justify-self: start;
+}
+  
+.valorConductor {
+    grid-area: dato4;
+    /* display: inline; */
+    /* width: 250px; */
+    justify-self: start;
+}
+  
+.titTotReserva {
+    grid-area: titulo5;
+    /* display: inline; */
+    justify-self: start;
+}
+  
+.valorTotReserva {
+    grid-area: dato5;
+    /* display: inline; */
+    /* width: 250px; */
+    justify-self: start;
+}
+  
+.titValorRecogida {
+    grid-area: titulo6;
+    /* display: inline; */
+    justify-self: start;
+}
+  
+.ValorRecogida {
+    grid-area: dato6;
+    /* display: inline; */
+    /* width: 250px; */
+    justify-self: start;
+}
+
+.titValorOnline {
+    grid-area: titulo7;
+    display: inline;
+    background-color: #ff0;
+    /* margin:0px 51px; */
+    justify-self: start;
+}
+  
+.ValorOnline {
+    grid-area: dato7;
+    /* display: inline; */
+    /* width: 250px; */
+    background-color: #ff0;
+    justify-self: start;
+}
+  
+.precioIncluye {
+    display: flex;
+    /* width: 250px; */
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+}
+  
+#icon-Mundi {
+    width: 25px;
+    margin-left: var(--margin-izquierda-titulo);
+    
+}
+  
+#imgCarReserva {
+    width: 50%;
+}
+/* -------   Fin Contenido   ---------- */
+
+/* --- Inicio Incluido en el precio ---- */
+.beneficios {
+    /* grid-column: 4 / 8;
+    grid-row: 4 / 5; */
+}
+
+.includPrice-container {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+}
+
+.tit-includPrice-container {
+    font-size: 18px;
+    line-height: initial;
+    font-weight: 700;
+    color: #444;
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.includPrice-contenido 
+{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+
+    list-style: none;
+    text-align: center;
+    margin: 10px auto;
+    padding: 0;
+    max-width: 85%;
+
+    /* //---- */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    column-gap: 40px;
+    list-style: none;
+    /* text-align: center; */
+    /* margin: 10px auto; */
+    /* padding: 0; */
+    max-width: 100%;
+    flex-wrap: wrap;
+    place-content: center;
+
+}
+
+.tooltipBlanco
+{
+    flex-basis: 200px;
+    height: 65px;
+}
+
+
+
+
+/* ---- Fin Incluido en el precio ----- */
+
+/* ---- Inicio Sillas y Elevadores niños ----- */
+.sillasBox {
+    /* grid-column: 4 / 8;
+    grid-row: 5 / 7; */
+}
+
+.sillasContent {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 0;
+    position: relative;
+    display: block;
+}
+
+.titSillas {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    display: flex;
+}
+
+.titSillas h2 {
+    margin-left: var(--margin-izquierda-titulo);
+    font-size: 19px;
+    line-height: initial;
+    font-weight: 700;
+    color: #444;
+}
+
+.titSillas>h2 i.icoSillas {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 24px;
+    height: 24px;
+    background: url(../img/svg/iconChildSeat.svg) no-repeat;
+    margin-right: 5px;
+}
+
+.sillasContent>h2 {
+    font-size: 18px;
+    line-height: initial;
+    font-weight: 700;
+    color: #444;
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.dataBox {
+    padding: 20px;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.dataExtras {
+    width: 60%;
+    list-style: none;
+    padding: 0;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.sillas
+{
+    display: grid;
+    grid-template-columns: 10% 10% 10% 11% 50%;
+    grid-template-rows: 0.2fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "silla silla casilla info titulo"
+        "silla silla casilla info descripcion";
+    /* justify-items: center; */
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.silla
+{ 
+    grid-area: silla;
+}
+
+.casilla
+{ 
+    grid-area: casilla; 
+}
+
+.info
+{ 
+    grid-area: info;
+    justify-self: center;
+}
+
+.titulo_asientos 
+{ 
+    grid-area: titulo;
+    justify-self: flex-start;
+}
+
+.descripcion
+{ 
+    grid-area: descripcion;
+    text-align: left;
+    /* margin-block: 0px; */
+}
+
+.titulo_asientos,
+.descripcion {
+    font-size: 15px;
+    color: #504e4e;
+}
+
+.dataExtras .extraLine>img {
+    width: 12%;
+    margin-right: 3%;
+}
+
+.dataExtras .extraLine>* {
+    display: inline;
+    vertical-align: middle;
+}
+
+.extraLine {
+    margin: 25px 0;
+}
+
+.safariSelect {
+    background: #fff;
+    border-radius: 3px;
+    -webkit-appearance: menulist;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    transition: all .2s;
+}
+
+.text-nowrap {
+    white-space: nowrap;
+}
+
+.infoIco {
+    width: 16px;
+    height: 16px;
+    background: url(../img/svg/iconInfo.svg) no-repeat center;
+    font-size: 0;
+    /* display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle;
+    line-height: 0;
+    text-indent: -3000px; */
+}
+
+.details {
+    width: 64%;
+    margin-left: 3%;
+}
+
+.titulo_asientos {
+
+    font-weight: 700;
+}
+
+.descripcion {
+    display: block;
+    font-size: 1.03em;
+    line-height: 1.25em;
+    margin: 0 0 10px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+/* ---- Fin Sillas y Elevadores niños ----- */
+
+/* ---- Inicio datos conductor principal ----- */
+.formDriver {
+    /* grid-column: 4 / 8;
+    grid-row: 7 / 9; */
+}
+
+.formDriverContent {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 0;
+    position: relative;
+    display: block;
+    height: 385px;
+}
+
+.databoxDrive >label{
+    content: "* ";
+    color: #f44336;
+}
+
+.formdriver-titulo-caja
+{
+    border-bottom: 1px solid #ddd;
+    display: flex;
+}
+
+
+
+.formdriver-titulo-texto{
+    
+    font-size: 19px;  
+    padding: 8px;
+    font-weight: 700;
+    color: #444;
+    margin-left: var(--margin-izquierda-titulo);
+}
+
+.formdriver-titulo-texto i.ico {
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    background-position: 0 -96px;
+    background: url(../img/svg/persona-black.svg) no-repeat;
+}
+
+.formDriverContent[data-info-form]:before{
+    content: attr(data-info-form);
+    font-size: 12px;
+    position: absolute;
+    top: 55px;
+    right: 5px;
+    color: red;
+}
+
+.databoxDriver {
+    display: grid;
+    grid-template-columns:  25% 55% 1fr;
+    grid-template-rows: repeat(5,27%) 29%;
+    gap: 0px 17px;
+    justify-items: flex-end;
+    align-items: center;
+    height: 192px;
+    grid-template-areas:
+      "titDriver titDataDriver titDataDriver"
+      "nomDriver nomDataDriver errorNombre"
+      "apellDriver apellDataDriver errorApell"
+      "eMailDriver eMailDataDriver errorEmail"
+      "telefDriver telefDataDriver errorTelf"
+      "condiciones condiciones condiciones";
+}
+
+.databoxDriver label {
+    font-size: 1.2em;
+    color: #504e4e;
+}
+
+.titDriver { 
+    grid-area: titDriver; 
+}
+  
+.titDataDriver { 
+    grid-area: titDataDriver;
+    display: flex;
+}
+  
+.nomDriver { 
+    grid-area: nomDriver; 
+}
+  
+.nomDataDriver {
+    grid-area: nomDataDriver; 
+    
+}
+  
+.apellDriver { 
+    grid-area: apellDriver; 
+    
+}
+  
+.apellDataDriver { 
+    grid-area: apellDataDriver;
+
+}
+  
+.eMailDriver { 
+    grid-area: eMailDriver; 
+}
+  
+.eMailDataDriver { 
+    grid-area: eMailDataDriver; 
+
+}
+  
+.telefDriver { 
+    grid-area: telefDriver; 
+}
+  
+.telefDataDriver { 
+    grid-area: telefDataDriver; 
+
+}
+  
+.condiciones { 
+    grid-area: condiciones;
+    justify-self: center;
+}
+
+.mitad-izquierda
+{
+    width: 100%;
+    justify-self: flex-start;
+
+}
+
+.input-texto
+{
+  padding: 5px;
+  border: 1px solid #868680;
+
+}
+
+.icono-20
+{
+    width: 20px;
+}
+
+.visible
+{
+    visibility: visible;
+    justify-self: flex-start;
+}
+
+.no-visible
+{
+    visibility: hidden;
+    justify-self: flex-start;
+
+}
+
+.errorNombre
+{
+    grid-area: errorNombre;
+}
+
+.errorApell
+{
+    grid-area: errorApell;
+}
+
+.errorEmail
+{
+    grid-area: errorEmail;
+}
+
+.errorTelf
+{
+    grid-area: errorTelf;
+}
+
+
+/* ---- Botón Reservar ---- */
+.boxBtnRevervar {
+    margin-bottom: 50px;
+}  
+
+.btnReserva {
+    width: 290px;
+    background-color: #2e09ba;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-weight: 700;
+    padding: 1em 0;
+    -webkit-appearance: button;
+    cursor: pointer;
+
+}
+
+/* -- barra de pago, (Bajo botón ) */
+.link-condiciones {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.barraPago {
+    display: block;
+    margin: 16px 2px;
+}
+
+.barraPago span {
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #504e4e;
+    vertical-align: 4px;
+    margin-left: 25px;
+}
+
+.blockSpace {
+    display: block;
+    height: 100px;
+}
+
+/* -- fin barra de pago, (Bajo botón ) */
+
+.formularioreservar
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 7px;
+}
+
+.input-terminos
+{
+    vertical-align: baseline;
+}
+
+.candado-imagen
+{
+    
+    width: 17px;
+    margin-bottom: 2px;
+}
+
+.color_rojo
+{
+    color: red;
+}
+
+/* -- barra de pago, (Bajo botón ) */
+.link-condiciones {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.barraPago {
+    display: block;
+    margin: 16px 2px;
+}
+
+.barraPago span {
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #504e4e;
+    vertical-align: 4px;
+    margin-left: 25px;
+}
+
+.blockSpace {
+    display: block;
+    height: 100px;
+}
+
+/* -- fin barra de pago, (Bajo botón ) */
+
+.boton-terminos,
+.boton-privacidad
+{
+    color: rgb(15, 99, 189);
+    text-decoration: none;
+
+}
+
+
+.boton-terminos:hover,
+.boton-privacidad:hover
+{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.contenido_privacidad,
+.contenido_terminos
+{
+    text-align: left;
+}
+
+
+/* ---- Fin datos conductor principal ----- */
+
+
+.bandera
+{
+  width: 50px;
+
+}
+
+
+/* --------------- VENTANA MODAL------------------------- */
+
+
+.modal-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-invisible
+{
+  visibility: hidden;
+  opacity: 0;
+}
+
+.overlay-transparente
+{
+  display: block;
+  background: rgba(0, 0, 0, 0.563);
+  
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  overflow: hidden;
+
+
+}
+
+.details-modal {
+
+  position: relative;
+
+  background: rgb(255, 255, 255);
+  border-radius: 0.5em;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  padding-bottom: 32px; 
+  padding-right: 0px;
+  overflow: auto;
+  
+  width: 700px;
+  height: 400px;
+  opacity: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  padding-left: 25px;
+
+  list-style: none;
+
+  
+}
+
+.details-modal-close {
+  position: absolute;
+  
+  align-items: center;
+  color: rgb(17, 24, 39);
+  display: flex;
+  height: 4.5em;
+  justify-content: center;
+  
+  right: 0;
+  top: 0;
+  width: 4.5em;
+  cursor: pointer;
+}
+
+.details-modal-title {
+  color: rgb(17, 24, 39);
+  padding: 1.5em 2em;
+  pointer-events: all;
+  position: relative;
+  width: calc(100% - 4.5em);
+}
+
+.details-modal-title-text 
+{
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.subtitulo-contenido-modal
+{
+  font-size: 15px;
+  font-weight: 900;
+  margin-top: 20px;
+  text-decoration: underline;
+}
+.negrita
+{
+  
+  font-weight: 700;
+}
+
+.boton-cerrar-modal
+{
+  width: 100px;
+  z-index: 2;
+}
+
+/* ------------------ FIN VENTANA MODAL ------------------- */
+
+
+
+/* TOOLTIP */
+
+
+[data-tooltip]
+{
+  position: relative;
+  z-index: 10;
+}
+
+
+[data-tooltip]:before,
+[data-tooltip]:after 
+{
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  left: 50%;
+  bottom: calc(100% + 5px);
+  pointer-events: none;
+  transition: 0.2s;
+  will-change: transform;
+}
+
+
+[data-tooltip]:before {
+  content: attr(data-tooltip);
+  padding: 10px 18px;
+  min-width: 50px;
+  max-width: 300px;
+  width: max-content;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: rgba(59, 72, 80, 0.9);
+  background-image: linear-gradient(30deg,
+    rgba(59, 72, 80, 0.44),
+    rgba(59, 68, 75, 0.44),
+    rgba(60, 82, 88, 0.44));
+  box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  text-align: center;
+  white-space: pre-wrap;
+  transform: translate(-50%, -5px) scale(0.5);
+}
+
+
+[data-tooltip]:after {
+  content: '';
+  border-style: solid;
+  border-width: 5px 5px 0px 5px;
+  border-color: rgba(55, 64, 70, 0.9) transparent transparent transparent;
+  transition-duration: 0s; 
+  transform-origin: top;  
+  transform: translateX(-50%) scaleY(0);
+}
+
+
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+[data-tooltip]:hover:before {
+  transition-delay: 0.2s;
+  transform: translate(-50%, -5px) scale(1);
+}
+
+
+[data-tooltip]:hover:after {
+  transition-delay: 0.2s;
+  transition-duration: 0.2s;
+  transform: translateX(-50%) scaleY(1);
+}
+
+
+[data-tooltip-location="left"]:before,
+[data-tooltip-location="left"]:after {
+  left: auto;
+  right: calc(100% + 5px);
+  bottom: 50%;
+}
+
+[data-tooltip-location="left"]:before
+{
+  transform: translate(-5px, 50%) scale(0.5);
+}
+[data-tooltip-location="left"]:hover:before
+{
+  transform: translate(-5px, 50%) scale(1);
+}
+
+/* Flechita */
+[data-tooltip-location="left"]:after
+{
+  border-width: 5px 0px 5px 5px;
+  border-color: transparent transparent transparent rgba(55, 64, 70, 0.9);
+  transform-origin: left;
+  transform: translateY(50%) scaleX(0);
+}
+
+[data-tooltip-location="left"]:hover:after
+{
+  transform: translateY(50%) scaleX(1);
+}
+
+
+
+/* RIGHT */
+[data-tooltip-location="right"]:before,
+[data-tooltip-location="right"]:after
+{
+  left: calc(100% + 5px);
+  bottom: 50%;
+}
+
+[data-tooltip-location="right"]:before
+{
+  transform: translate(5px, 50%) scale(0.5);
+}
+
+[data-tooltip-location="right"]:hover:before
+{
+  transform: translate(5px, 50%) scale(1);
+}
+
+[data-tooltip-location="right"]:after
+{
+  border-width: 5px 5px 5px 0px;
+  border-color: transparent rgba(55, 64, 70, 0.9) transparent transparent;
+  transform-origin: right;
+  transform: translateY(50%) scaleX(0);
+}
+
+[data-tooltip-location="right"]:hover:after
+{
+  transform: translateY(50%) scaleX(1);
+}
+
+
+/* BOTTOM */
+[data-tooltip-location="bottom"]:before,
+[data-tooltip-location="bottom"]:after
+{
+  top: calc(100% + 5px);
+  bottom: auto;
+}
+
+[data-tooltip-location="bottom"]:before
+{
+  transform: translate(-50%, 5px) scale(0.5);
+}
+[data-tooltip-location="bottom"]:hover:before
+{
+  transform: translate(-50%, 5px) scale(1);
+}
+
+[data-tooltip-location="bottom"]:after
+{
+  border-width: 0px 5px 5px 5px;
+  border-color: transparent transparent rgba(55, 64, 70, 0.9) transparent;
+  transform-origin: bottom;
+}
+
+
+
+/* FIN TOOLTIP*/
