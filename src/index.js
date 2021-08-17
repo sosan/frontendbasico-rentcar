@@ -175,7 +175,7 @@ app.use("/", express.static('public'));
 app.use("/", apiLimiter);
 app.use("/", router);
 
-const portStatic = 8443;
+const portStatic = 8085;
 // escucha puerto servidor
 app.listen(portStatic, (error) => {
     if (error) {
